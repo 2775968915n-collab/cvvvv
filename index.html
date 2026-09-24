@@ -3,261 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Nguyễn Văn Ngọt - IT Developer</title>
+    <title>Bảng tổng hợp 4 Cuộc Cách Mạng Công Nghiệp</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --card-bg: #ffffff;
         }
 
         body {
-            background-color: #f4f6f9;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            padding: 40px 20px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
         }
 
-        .cv-container {
-            max-width: 850px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            background: #fff;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            border-top: 8px solid #0056b3;
         }
 
-        /* Header */
         header {
             text-align: center;
-            border-bottom: 2px solid #eceff1;
-            padding-bottom: 25px;
             margin-bottom: 30px;
+            padding: 20px 0;
         }
 
         header h1 {
-            color: #0056b3;
-            font-size: 32px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        header h3 {
+        header p {
             color: #666;
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 14px;
-            color: #555;
+        /* Khung chứa ảnh tiến trình đồ họa */
+        .timeline-banner {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .contact-info span {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        .timeline-banner img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
         }
 
-        /* Sections */
-        section {
+        .image-caption {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Giao diện Table cho Máy tính */
+        .table-responsive {
+            overflow-x: auto;
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
 
-        .section-title {
-            color: #0056b3;
-            font-size: 18px;
-            text-transform: uppercase;
-            border-left: 4px solid #0056b3;
-            padding-left: 10px;
-            margin-bottom: 15px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-size: 1.1rem;
             font-weight: 600;
         }
 
-        p, li {
-            font-size: 15px;
-            color: #444;
+        th:nth-child(1) { width: 20%; }
+        th:nth-child(2) { width: 40%; }
+        th:nth-child(3) { width: 40%; }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fdfdfd;
+        }
+
+        .cmcn-title {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .cmcn-time {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-style: italic;
         }
 
         ul {
-            list-style-type: none;
+            margin: 0;
+            padding-left: 20px;
         }
 
-        /* Grid Kỹ năng */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
+        li {
+            margin-bottom: 10px;
         }
 
-        .skill-item strong {
-            color: #0056b3;
-            display: block;
-            margin-bottom: 2px;
+        li strong {
+            color: #2c3e50;
         }
 
-        /* Timeline Kinh nghiệm / Học vấn */
-        .timeline-item {
-            margin-bottom: 20px;
+        /* Giao diện Card cho Điện thoại */
+        .mobile-cards {
+            display: none;
         }
 
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            color: #222;
-            margin-bottom: 5px;
-        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .table-responsive { display: none; }
+            
+            .mobile-cards {
+                display: block;
+            }
 
-        .timeline-sub {
-            font-style: italic;
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
+            .card {
+                background: var(--card-bg);
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                margin-bottom: 25px;
+                padding: 20px;
+                border-left: 5px solid var(--accent-color);
+            }
 
-        .timeline-body {
-            padding-left: 15px;
-            border-left: 2px solid #eceff1;
-        }
+            .card-header {
+                margin-bottom: 15px;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 10px;
+            }
 
-        .timeline-body li {
-            margin-bottom: 5px;
-            position: relative;
-        }
-        
-        .timeline-body li::before {
-            content: "•";
-            color: #0056b3;
-            font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .cv-container { padding: 20px; }
-            .timeline-header { flex-direction: column; }
-            .contact-info { flex-direction: column; gap: 8px; align-items: center; }
+            .section-title {
+                font-weight: bold;
+                color: var(--primary-color);
+                margin-top: 15px;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                letter-spacing: 0.5px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="cv-container">
-        <!-- HEADER -->
-        <header>
-            <h1>Nguyễn Văn Ngọt</h1>
-            <h3>Lập trình viên Web / Phần mềm (IT Developer)</h3>
-            <div class="contact-info">
-                <span>📱 0825 831 116</span>
-                <span>✉️ 2775968915n@gmail.com</span>
-                <span>📍 Tỉnh Đắk Lắk</span>
-            </div>
-        </header>
+<div class="container">
+    <header>
+        <h1>Bảng Tổng Hợp 4 Cuộc Cách Mạng Công Nghiệp</h1>
+        <p>Phân tích Nguyên nhân (Tiền đề & Động lực) và Kết quả (Biến đổi & Hệ quả)</p>
+    </header>
 
-        <!-- MỤC TIÊU NGHỀ NGHIỆP -->
-        <section>
-            <div class="section-title">Mục tiêu nghề nghiệp</div>
-            <p><strong>Ngắn hạn:</strong> Áp dụng kiến thức về ngôn ngữ lập trình và tư duy logic để hoàn thành tốt các dự án phần mềm được giao. Tích cực học hỏi quy trình làm việc thực tế và nâng cao kỹ năng viết code sạch (clean code).</p>
-            <p style="margin-top: 8px;"><strong>Dài hạn:</strong> Trở thành một Kỹ sư phần mềm chuyên nghiệp (Senior Developer) hoặc Full-stack Developer trong vòng 3-5 năm tới, đóng góp vào sự phát triển các sản phẩm công nghệ cốt lõi của công ty.</p>
-        </section>
-
-        <!-- KỸ NĂNG CHUYÊN MÔN -->
-  <div class="skills-container">
-  <!-- Cột bên trái: Danh sách kỹ năng -->
-  <div class="skills-text">
-    <h2 class="skills-title">KỸ NĂNG CHUYÊN MÔN</h2>
-    
-    <div class="skills-grid">
-      <div class="skill-item">
-        <h3>Ngôn ngữ lập trình</h3>
-        <p>HTML, CSS, JavaScript, Java, Python</p>
-      </div>
-      
-      <div class="skill-item">
-        <h3>Framework / Thư viện</h3>
-        <p>ReactJS, NodeJS, Express</p>
-      </div>
-      
-      <div class="skill-item">
-        <h3>Cơ sở dữ liệu</h3>
-        <p>MySQL, SQL Server, MongoDB</p>
-      </div>
-      
-      <div class="skill-item">
-        <h3>Công cụ & Kỹ năng khác</h3>
-        <p>Git, GitHub, VS Code, Tư duy logic</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Cột bên phải: Hình ảnh tự động thu nhỏ -->
-  <div class="skills-image">
-    <img src="https://squarespace-cdn.com" alt="How To Be A Software Engineer">
-  </div>
-</div>
-
-
-        <!-- KINH NGHIỆM LÀM VIỆC / DỰ ÁN -->
-        <section>
-            <div class="section-title">Kinh nghiệm & Dự án</div>
-            
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span>Dự án: Website Quản Lý Chi Tiêu Cá Nhân (Đồ án)</span>
-                    <span>01/2026 - 05/2026</span>
-                </div>
-                <div class="timeline-sub">Vị trí: Lập trình viên Full-stack</div>
-                <div class="timeline-body">
-                    <ul>
-                        <li>Phân tích yêu cầu hệ thống và thiết kế cơ sở dữ liệu bằng MySQL.</li>
-                        <li>Xây dựng giao diện Responsive trực quan bằng ReactJS và quản lý API với NodeJS.</li>
-                        <li>Tối ưu hóa hệ thống giúp tốc độ tải trang nhanh hơn 20%.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- TRÌNH ĐỘ HỌC VẤN -->
-        <section>
-            <div class="section-title">Trình độ học vấn</div>
-            <div class="timeline-item">
-                <div class="timeline-header">
-                    <span>Trường Đại học / Cao đẳng Công nghệ</span>
-                    <span>2022 - 2026</span>
-                </div>
-                <div class="timeline-sub">Chuyên ngành: Công nghệ thông tin</div>
-                <div class="timeline-body">
-                    <ul>
-                        <li>Tốt nghiệp loại: Khá/Giỏi.</li>
-                        <li>Nắm vững kiến thức về Cấu trúc dữ liệu & Giải thuật, Cơ sở dữ liệu và Mạng máy tính.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- CHỨNG CHỈ & HOẠT ĐỘNG -->
-        <section>
-            <div class="section-title">Chứng chỉ & Hoạt động</div>
-            <div class="timeline-body" style="border: none; padding-left: 15px;">
-                <ul>
-                    <li>Chứng chỉ Lập trình Web Full-Stack ứng dụng - Udemy (2025).</li>
-                    <li>Đọc hiểu tài liệu tiếng Anh chuyên ngành công nghệ thông tin tốt.</li>
-                    <li>Thành viên tích cực tham gia Câu lạc bộ Tin học tại trường.</li>
-                </ul>
-            </div>
-        </section>
+    <!-- SƠ ĐỒ TIẾN TRÌNH CÁC CUỘC CMCN -->
+    <div class="timeline-banner">
+        <img src="https://squarespace-cdn.com" alt="Sơ đồ tiến trình cách mạng công nghiệp">
+        <div class="image-caption">Sơ đồ tóm tắt đặc trưng cốt lõi của 4 làn sóng Cách mạng Công nghiệp trong lịch sử</div>
     </div>
 
-</body>
-</html>
+    <!-- HIỂN THỊ TRÊN MÁY TÍNH (TABLE) -->
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Cuộc CMCN</th>
+                    <th>Nguyên nhân (Tiền đề & Động lực)</th>
+                    <th>Kết quả (Biến đổi & Hệ quả)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- CMCN 1 -->
+                <tr>
+                    <td>
+                        <span class="cmcn-title">⚙️ CMCN Lần 1</span>
+                        <span class="cmcn-time">Thế kỷ XVIII - XIX</span>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Nhu cầu thị trường:</strong> Phương thức công trường thủ công không đáp ứng đủ nhu cầu hàng hóa ngày càng lớn của chủ nghĩa tư bản.</li>
+                            <li><strong>Tiền đề kỹ thuật:</strong> Sự ra đời của máy hơi nước (James Watt) và máy dệt.</li>
+                            <li><strong>Nguồn lực kinh tế:</strong> Tích lũy tư bản lớn ở Anh nhờ thương mại và thuộc địa.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Cơ khí hóa sản xuất:</strong> Chuyển từ lao động thủ công sang lao động máy móc.</li>
+                            <li><strong>Cơ cấu xã hội thay đổi:</strong> Hình thành hai giai cấp cơ bản là Tư sản và Vô sản.</li>
+                            <li><strong>Đô thị hóa:</strong> Xuất hiện các trung tâm công nghiệp lớn, dòng người dịch chuyển từ nông thôn ra thành thị.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- CMCN 2 -->
+                <tr>
+                    <td>
+                        <span class="cmcn-title">⚡ CMCN Lần 2</span>
+                        <span class="cmcn-time">Cuối TK XIX - Đầu TK XX</span>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Yêu cầu mở rộng:</strong> Nền sản xuất cơ khí lần 1 chạm trần về tốc độ và quy mô, cần nguồn năng lượng mới mạnh mẽ hơn.</li>
+                            <li><strong>Đột phá khoa học:</strong> Khám phá ra điện năng, động cơ đốt trong và ngành hóa chất.</li>
+                            <li><strong>Quản lý sản xuất:</strong> Sự ra đời của phương pháp quản lý khoa học (phân công lao động sâu sắc).</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Điện khí hóa & Sản xuất hàng loạt:</strong> Xuất hiện dây chuyền lắp ráp công nghiệp (tiêu biểu là hãng Ford), sản lượng tăng vọt.</li>
+                            <li><strong>Tập trung tư bản:</strong> Hình thành các tập đoàn độc quyền lớn cai trị nền kinh tế toàn cầu.</li>
+                            <li><strong>Giao thông phát triển:</strong> Ô tô, máy bay và tàu hỏa động cơ diesel thu hẹp khoảng cách địa lý.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- CMCN 3 -->
+                <tr>
+                    <td>
+                        <span class="cmcn-title">💻 CMCN Lần 3</span>
+                        <span class="cmcn-time">Nửa sau TK XX</span>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Nhu cầu xử lý thông tin:</strong> Quá trình quản lý sản xuất quy mô lớn ở Lần 2 trở nên quá phức tạp, vượt quá khả năng tính toán thủ công của con người.</li>
+                            <li><strong>Hệ quả của Thế chiến II:</strong> Thúc đẩy nghiên cứu khoa học quân sự chuyển giao sang dân sự.</li>
+                            <li><strong>Đột phá công nghệ:</strong> Sự ra đời của bán dẫn, máy tính điện tử (PC) và mạng Internet.</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><strong>Tự động hóa:</strong> Máy móc thay thế con người trong các hoạt động tính toán và vận hành lặp đi lặp lại.</li>
+                            <li><strong>Nền kinh tế tri thức:</strong> Tri thức và thông tin trở thành lực lượng sản xuất trực tiếp, quan trọng hơn cơ bắp.</li>
+                            <li><strong>Toàn cầu hóa:</strong> Thế giới phẳng hơn, các luồng vốn và thông tin lưu chuyển xuyên quốc gia trong tích tắc.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <!-- CMCN 4 -->
+                <tr>
+                    <td>
+                        <span class="cmcn-title">🤖 CMCN Lần 4</span>
+                        <span class="cmcn-time">Đầu TK XXI - Hiện tại</span>
+                    </td>
+                    <td>
+                        <ul>
