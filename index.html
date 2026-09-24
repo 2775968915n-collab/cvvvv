@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Nguyễn Văn Ngọt - IT Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            border-top: 8px solid #0056b3;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #eceff1;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #0056b3;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        header h3 {
+            color: #666;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #0056b3;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-left: 4px solid #0056b3;
+            padding-left: 10px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: #444;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        /* Grid Kỹ năng */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item strong {
+            color: #0056b3;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Timeline Kinh nghiệm / Học vấn */
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .timeline-sub {
+            font-style: italic;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-body {
+            padding-left: 15px;
+            border-left: 2px solid #eceff1;
+        }
+
+        .timeline-body li {
+            margin-bottom: 5px;
+            position: relative;
+        }
+        
+        .timeline-body li::before {
+            content: "•";
+            color: #0056b3;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .cv-container { padding: 20px; }
+            .timeline-header { flex-direction: column; }
+            .contact-info { flex-direction: column; gap: 8px; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- HEADER -->
+        <header>
+            <h1>Nguyễn Văn Ngọt</h1>
+            <h3>Lập trình viên Web / Phần mềm (IT Developer)</h3>
+            <div class="contact-info">
+                <span>📱 0825 831 116</span>
+                <span>✉️ 2775968915n@gmail.com</span>
+                <span>📍 Tỉnh Đắk Lắk</span>
+                <span>🔗 ://github.com</span>
+            </div>
+        </header>
+
+        <!-- MỤC TIÊU NGHỀ NGHIỆP -->
+        <section>
+            <div class="section-title">Mục tiêu nghề nghiệp</div>
+            <p><strong>Ngắn hạn:</strong> Áp dụng kiến thức về ngôn ngữ lập trình và tư duy logic để hoàn thành tốt các dự án phần mềm được giao. Tích cực học hỏi quy trình làm việc thực tế và nâng cao kỹ năng viết code sạch (clean code).</p>
+            <p style="margin-top: 8px;"><strong>Dài hạn:</strong> Trở thành một Kỹ sư phần mềm chuyên nghiệp (Senior Developer) hoặc Full-stack Developer trong vòng 3-5 năm tới, đóng góp vào sự phát triển các sản phẩm công nghệ cốt lõi của công ty.</p>
+        </section>
+
+        <!-- KỸ NĂNG CHUYÊN MÔN -->
+        <section>
+            <div class="section-title">Kỹ năng chuyên môn</div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <strong>Ngôn ngữ lập trình</strong>
+                    HTML, CSS, JavaScript, Java, Python
+                </div>
+                <div class="skill-item">
+                    <strong>Framework / Thư viện</strong>
+                    ReactJS, NodeJS, Express
+                </div>
+                <div class="skill-item">
+                    <strong>Cơ sở dữ liệu</strong>
+                    MySQL, SQL Server, MongoDB
+                </div>
+                <div class="skill-item">
+                    <strong>Công cụ & Kỹ năng khác</strong>
+                    Git, GitHub, VS Code, Tư duy logic
+                </div>
+            </div>
+        </section>
+
+        <!-- KINH NGHIỆM LÀM VIỆC / DỰ ÁN -->
+        <section>
+            <div class="section-title">Kinh nghiệm & Dự án</div>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span>Dự án: Website Quản Lý Chi Tiêu Cá Nhân (Đồ án)</span>
+                    <span>01/2026 - 05/2026</span>
+                </div>
+                <div class="timeline-sub">Vị trí: Lập trình viên Full-stack</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Phân tích yêu cầu hệ thống và thiết kế cơ sở dữ liệu bằng MySQL.</li>
+                        <li>Xây dựng giao diện Responsive trực quan bằng ReactJS và quản lý API với NodeJS.</li>
+                        <li>Tối ưu hóa hệ thống giúp tốc độ tải trang nhanh hơn 20%.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRÌNH ĐỘ HỌC VẤN -->
+        <section>
+            <div class="section-title">Trình độ học vấn</div>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span>Trường Đại học / Cao đẳng Công nghệ</span>
+                    <span>2022 - 2026</span>
+                </div>
+                <div class="timeline-sub">Chuyên ngành: Công nghệ thông tin</div>
+                <div class="timeline-body">
+                    <ul>
+                        <li>Tốt nghiệp loại: Khá/Giỏi.</li>
+                        <li>Nắm vững kiến thức về Cấu trúc dữ liệu & Giải thuật, Cơ sở dữ liệu và Mạng máy tính.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHỨNG CHỈ & HOẠT ĐỘNG -->
+        <section>
+            <div class="section-title">Chứng chỉ & Hoạt động</div>
+            <div class="timeline-body" style="border: none; padding-left: 15px;">
+                <ul>
+                    <li>Chứng chỉ Lập trình Web Full-Stack ứng dụng - Udemy (2025).</li>
+                    <li>Đọc hiểu tài liệu tiếng Anh chuyên ngành công nghệ thông tin tốt.</li>
+                    <li>Thành viên tích cực tham gia Câu lạc bộ Tin học tại trường.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
